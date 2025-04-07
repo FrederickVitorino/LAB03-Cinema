@@ -35,6 +35,80 @@
                 </li>
             </ul>
 
+            <main>
+                <form class="row g-3" id="form-cadastro-sessoes" onsubmit="cadastrarSessao(event)">
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <label for="filme-sessao" class="form-label">Filme:</label>
+                        </div>
+    
+                        <div class="col">
+                            <select class="form-select" id="filme-sessao" required>
+                                <option selected disabled>Selecione o filme</option>
+                                <!-- Carregar os nomes dos filmes que estão no LocalStorage -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <label for="sala-sessao" class="form-label">Sala:</label>
+                        </div>
+    
+                        <div class="col">
+                            <select class="form-select" id="sala-sessao" required>
+                                <option selected disabled>Selecione a sala</option>
+                                <!-- Carregar os nomes das salas que estão no LocalStorage -->
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <label for="data-hora" class="col-form-label">Data e Hora:</label>
+                        </div>
+
+                        <div class="col-auto">
+                            <input type="datetime-local" id="data-hora" class="form-control" required>
+                        </div>
+
+                        <div class="col-auto">
+                            <label for="preco" class="col-form-label">Preço:</label>
+                        </div>
+
+                        <div class="col">
+                            <input type="number" id="preco" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <label for="idioma-sessao" class="col-form-label">Idioma:</label>
+                        </div>
+
+                        <select class="form-select col" id="idioma-sessao" required>
+                            <option selected disabled>Selecione o idioma</option>
+                            <option value="Dublado">Dublado</option>
+                            <option value="Legendado">Legendado</option>
+                        </select>
+
+                        <div class="col-auto">
+                            <label for="formato-sessao" class="col-form-label">Formato:</label>
+                        </div>
+
+                        <select class="form-select col" id="formato-sessao" required>
+                            <option selected disabled>Selecione o formato</option>
+                            <option value="2D">2D</option>
+                            <option value="3D">3D</option>
+                        </select>
+                    </div>
+
+                    <div class="col-auto align-items-center">
+                        <button type="submit" class="btn btn-dark">Salvar Sessão</button>
+                    </div>
+                </form>
+            </main>
+            
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
             <script src="../script.js"></script>
         </body>
