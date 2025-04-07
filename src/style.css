@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(18, 16, 13);
+    color: white;
+}
+
+main{
+    padding: 0px 10px;
+}
+
+.nav-link{
+    color: white;
+    font-weight: bold;
+}
+
+.nav-link:hover{
+    color: white;
+}
