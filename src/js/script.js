@@ -1,4 +1,4 @@
-function cadastrarSala(event){
+function cadastrarSala(event){ //passar função para o devido controller
     event.preventDefault();
     let salas = JSON.parse(localStorage.getItem("salas")) || [];
     const novoId = salas.length > 0 ? salas[salas.length - 1].id + 1 : 1;
@@ -16,7 +16,7 @@ function cadastrarSala(event){
     document.getElementById("form-cadastro-salas").reset();
 }
 
-function cadastrarSessao(event){
+function cadastrarSessao(event){ //passar função para o devido controller
     event.preventDefault();
     let sessoes = JSON.parse(localStorage.getItem("sessoes")) || [];
     const novoId = sessoes.length > 0 ? sessoes[sessoes.length - 1].id + 1 : 1;
