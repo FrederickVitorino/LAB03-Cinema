@@ -6,6 +6,15 @@ class Sala{
         this.tipo = tipo;
     }
 
+    static fromJSON(obj) {
+        return new Sala(
+            obj.id,
+            obj.nome,
+            obj.capacidade,
+            obj.tipo
+        );
+    }
+
     getId() { return this.id; }
     setId(id) { this.id = id; }
 

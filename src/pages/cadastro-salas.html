@@ -36,7 +36,7 @@
             </ul>
 
             <main>
-                <form class="row g-3" id="form-cadastro-salas" onsubmit="cadastrarSala(event)">
+                <form class="row g-3" id="form-cadastro-salas">
                     <div class="row g-3 align-items-center">
                         <div class="col-auto">
                             <label for="nome-sala" class="col-form-label">Nome da Sala:</label>
@@ -74,9 +74,22 @@
                         <button type="submit" class="btn btn-dark">Salvar Sala</button>
                     </div>
                 </form>
+
+                <hr>
+                <table class="table table-bordered border-secondary" id="tabela-salas">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nome da Sala</th>
+                            <th scope="col">Capacidade</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Editar/Excluir</th>
+                        </tr>
+                    </thead>
+                </table>
             </main>
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="../js/controllers/salaController.js"></script>
+            <script type="module" src="../js/controllers/salaController.js"></script>
         </body>
 </html>

@@ -36,7 +36,7 @@
             </ul>
 
             <main>
-                <form class="row g-3" id="form-cadastro-sessoes" onsubmit="cadastrarSessao(event)">
+                <form class="row g-3" id="form-cadastro-sessoes">
                     <div class="row g-3 align-items-center">
                         <div class="col-auto">
                             <label for="filme-sessao" class="form-label">Filme:</label>
@@ -45,7 +45,6 @@
                         <div class="col">
                             <select class="form-select" id="filme-sessao" required>
                                 <option selected disabled>Selecione o filme</option>
-                                <!-- Carregar os nomes dos filmes que estão no LocalStorage -->
                             </select>
                         </div>
                     </div>
@@ -58,7 +57,6 @@
                         <div class="col">
                             <select class="form-select" id="sala-sessao" required>
                                 <option selected disabled>Selecione a sala</option>
-                                <!-- Carregar os nomes das salas que estão no LocalStorage -->
                             </select>
                         </div>
                     </div>
@@ -108,9 +106,25 @@
                         <button type="submit" class="btn btn-dark">Salvar Sessão</button>
                     </div>
                 </form>
+
+                <hr>
+                <table class="table table-bordered border-secondary" id="tabela-sessoes">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nome do Filme</th>
+                            <th scope="col">Nome da Sala</th>
+                            <th scope="col">Data e Hora</th>
+                            <th scope="col">Preço</th>
+                            <th scope="col">Idioma</th>
+                            <th scope="col">Formato</th>
+                            <th scope="col">Editar/Excluir</th>
+                        </tr>
+                    </thead>
+                </table>
             </main>
             
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="../js/controllers/sessaoController.js"></script>
+            <script type="module" src="../js/controllers/sessaoController.js"></script>
         </body>
 </html>

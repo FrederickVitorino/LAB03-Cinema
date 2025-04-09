@@ -1,22 +1,37 @@
-class Sessao{
-    constructor(id, filmeId, salaId, dataHora, preco, idioma, formato){
+import Filme from "./filme.js";
+import Sala from "./sala.js";
+
+class Sessao {
+    constructor(id, filme, sala, dataHora, preco, idioma, formato) {
         this.id = id;
-        this.filmeId = filmeId;
-        this.salaId = salaId;
+        this.filme = filme;
+        this.sala = sala;
         this.dataHora = dataHora;
         this.preco = preco;
         this.idioma = idioma;
         this.formato = formato;
     }
 
+    static fromJSON(obj) {
+        return new Sessao(
+            obj.id,
+            Filme.fromJSON(obj.filme),
+            Sala.fromJSON(obj.sala),
+            obj.dataHora,
+            obj.preco,
+            obj.idioma,
+            obj.formato
+        );
+    }
+
     getId() { return this.id; }
     setId(id) { this.id = id; }
 
-    getFilmeId() { return this.filmeId; }
-    setFilmeId(filmeId) { this.filmeId = filmeId; }
+    getFilme() { return this.filme; }
+    setFilme(filme) { this.filme = filme; }
 
-    getSalaId() { return this.salaId; }
-    setSalaId(salaId) { this.salaId = salaId; }
+    getSala() { return this.sala; }
+    setSala(sala) { this.sala = sala; }
 
     getDataHora() { return this.dataHora; }
     setDataHora(dataHora) { this.dataHora = dataHora; }
