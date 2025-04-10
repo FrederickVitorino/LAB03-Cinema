@@ -9,119 +9,142 @@
         </head>
         
         <body>
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                  <a class="nav-link" href="../index.html">Página Inicial</a>
-                </li>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="../index.html">Cinema</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Página Inicial</a>
+                            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="venda-ingressos.html">Ingressos</a>
-                </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="venda-ingressos.html">Comprar Ingressos</a>
+                            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="sessoes.html">Sessões Disponíveis</a>
-                </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="sessoes.html">Sessões Disponíveis</a>
+                            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="cadastro-filmes.html">Cadastrar Filmes</a>
-                </li>
-  
-                <li class="nav-item">
-                    <a class="nav-link" href="cadastro-salas.html">Cadastrar Salas</a>
-                </li>
-  
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="cadastro-sessoes.html">Cadastrar Sessões</a>
-                </li>
-            </ul>
+                            <li class="nav-item">
+                                <a class="nav-link" href="cadastro-filmes.html">Cadastrar Filmes</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="cadastro-salas.html">Cadastrar Salas</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="cadastro-sessoes.html">Cadastrar Sessões</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
 
             <main>
                 <form class="row g-3" id="form-cadastro-sessoes">
-                    <div class="row g-3 align-items-center">
-                        <div class="col-auto">
-                            <label for="filme-sessao" class="form-label">Filme:</label>
+                    <div class="row mb-2">
+                        <div class="col-12 col-sm-6">
+                            <div class="col-auto">
+                                <label for="filme-sessao" class="col-form-label">Filme:</label>
+                            </div>
+        
+                            <div class="col">
+                                <select class="form-select" id="filme-sessao" required>
+                                    <option selected disabled>Selecione o filme</option>
+                                </select>
+                            </div>
                         </div>
-    
-                        <div class="col">
-                            <select class="form-select" id="filme-sessao" required>
-                                <option selected disabled>Selecione o filme</option>
-                            </select>
-                        </div>
-                    </div>
 
-                    <div class="row g-3 align-items-center">
-                        <div class="col-auto">
-                            <label for="sala-sessao" class="form-label">Sala:</label>
-                        </div>
-    
-                        <div class="col">
-                            <select class="form-select" id="sala-sessao" required>
-                                <option selected disabled>Selecione a sala</option>
-                            </select>
+                        <div class="col-12 col-sm-6">
+                            <div class="col-auto">
+                                <label for="sala-sessao" class="col-form-label">Sala:</label>
+                            </div>
+        
+                            <div class="col">
+                                <select class="form-select" id="sala-sessao" required>
+                                    <option selected disabled>Selecione a sala</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="row g-3 align-items-center">
-                        <div class="col-auto">
-                            <label for="data-hora" class="col-form-label">Data e Hora:</label>
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="col-auto">
+                                <label for="data-hora" class="col-form-label">Data e Hora:</label>
+                            </div>
+    
+                            <div class="col">
+                                <input type="datetime-local" id="data-hora" class="form-control" required>
+                            </div>
                         </div>
 
-                        <div class="col">
-                            <input type="datetime-local" id="data-hora" class="form-control" required>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="col-auto">
+                                <label for="preco" class="col-form-label">Preço:</label>
+                            </div>
+    
+                            <div class="input-group col">
+                                <span class="input-group-text">R$</span>
+                                <input type="number" id="preco" class="form-control" required>
+                            </div>
                         </div>
 
-                        <div class="col-auto">
-                            <label for="preco" class="col-form-label">Preço:</label>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="col-auto">
+                                <label for="idioma-sessao" class="col-form-label">Idioma:</label>
+                            </div>
+                            
+                            <div class="col">
+                                <select class="form-select" id="idioma-sessao" required>
+                                    <option selected disabled>Selecione o idioma</option>
+                                    <option value="Dublado">Dublado</option>
+                                    <option value="Legendado">Legendado</option>
+                                </select>
+                            </div>
                         </div>
 
-                        <div class="input-group col">
-                            <span class="input-group-text">R$</span>
-                            <input type="number" id="preco" class="form-control" required>
-                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="col-auto">
+                                <label for="formato-sessao" class="col-form-label">Formato:</label>
+                            </div>
+    
+                            <select class="form-select col" id="formato-sessao" required>
+                                <option selected disabled>Selecione o formato</option>
+                                <option value="2D">2D</option>
+                                <option value="3D">3D</option>
+                            </select>
+                        </div> 
                     </div>
 
-                    <div class="row g-3 align-items-center">
-                        <div class="col-auto">
-                            <label for="idioma-sessao" class="col-form-label">Idioma:</label>
-                        </div>
-
-                        <select class="form-select col" id="idioma-sessao" required>
-                            <option selected disabled>Selecione o idioma</option>
-                            <option value="Dublado">Dublado</option>
-                            <option value="Legendado">Legendado</option>
-                        </select>
-
-                        <div class="col-auto">
-                            <label for="formato-sessao" class="col-form-label">Formato:</label>
-                        </div>
-
-                        <select class="form-select col" id="formato-sessao" required>
-                            <option selected disabled>Selecione o formato</option>
-                            <option value="2D">2D</option>
-                            <option value="3D">3D</option>
-                        </select>
-                    </div>
-
-                    <div class="col-auto align-items-center">
+                    <div class="col-auto">
                         <button type="submit" class="btn btn-dark">Salvar Sessão</button>
                     </div>
                 </form>
 
                 <hr>
-                <table class="table table-bordered border-secondary" id="tabela-sessoes">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Nome do Filme</th>
-                            <th scope="col">Nome da Sala</th>
-                            <th scope="col">Data e Hora</th>
-                            <th scope="col">Preço</th>
-                            <th scope="col">Idioma</th>
-                            <th scope="col">Formato</th>
-                            <th scope="col">Editar/Excluir</th>
-                        </tr>
-                    </thead>
-                </table>
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped table-bordered border-secondary" id="tabela-sessoes">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nome do Filme</th>
+                                <th scope="col">Nome da Sala</th>
+                                <th scope="col">Data e Hora</th>
+                                <th scope="col">Preço</th>
+                                <th scope="col">Idioma</th>
+                                <th scope="col">Formato</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
             </main>
             
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

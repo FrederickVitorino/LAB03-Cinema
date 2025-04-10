@@ -1,5 +1,5 @@
 class Filme{
-    constructor(id, titulo, descricao, genero, classificacao, duracao, dataEstreia){
+    constructor(id, titulo, descricao, genero, classificacao, duracao, dataEstreia, imagem){
         this.id = id;
         this.titulo = titulo;
         this.descricao = descricao;
@@ -7,6 +7,7 @@ class Filme{
         this.classificacao = classificacao;
         this.duracao = duracao;
         this.dataEstreia = dataEstreia;
+        this.imagem = imagem;
     }
 
     static fromJSON(obj) {
@@ -17,7 +18,8 @@ class Filme{
             obj.genero,
             obj.classificacao,
             obj.duracao,
-            obj.dataEstreia
+            obj.dataEstreia,
+            obj.imagem
         );
     }
 
@@ -26,6 +28,9 @@ class Filme{
 
     getTitulo() { return this.titulo; }
     setTitulo(titulo) { this.titulo = titulo; }
+
+    getImagem() { return this.imagem; }
+    setImagem(imagem) { this.imagem = imagem; }
 
     getDescricao() { return this.descricao; }
     setDescricao(descricao) { this.descricao = descricao; }

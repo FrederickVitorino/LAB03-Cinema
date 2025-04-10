@@ -58,9 +58,12 @@ class SessaoController {
                 <td>${sessao.getFormato()}</td>
             `;
             const botoes = this.criarBotoes(sessao);
-            const tdBotoes = document.createElement("td");
-            botoes.forEach(botao => { tdBotoes.appendChild(botao); });
-            tr.appendChild(tdBotoes);
+            botoes.forEach(botao => { 
+                const tdBotoes = document.createElement("td"); 
+                tdBotoes.appendChild(botao); 
+                tr.appendChild(tdBotoes);
+            });
+            
             tbody.appendChild(tr);
         });
     

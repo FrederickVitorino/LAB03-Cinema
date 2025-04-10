@@ -14,7 +14,7 @@ class FilmeController{
         this.atualizarTabelaFilmes();
     }
 
-    cadastrarFilme(event){
+    cadastrarFilme(event) {
         event.preventDefault();
         const novoId = this.listaFilmes.length > 0 ? this.listaFilmes[this.listaFilmes.length - 1].id + 1 : 1;
     
@@ -24,15 +24,33 @@ class FilmeController{
         const classificacao = document.getElementById("classificacao-filme").value;
         const duracao = parseInt(document.getElementById("duracao-filme").value);
         const dataEstreia = document.getElementById("data-estreia").value;
-
-        const novoFilme = new Filme(novoId, titulo, descricao, genero, classificacao, duracao, dataEstreia);
     
-        this.listaFilmes.push(novoFilme);
-        localStorage.setItem("filmes", JSON.stringify(this.listaFilmes));
-        alert(`Filme "${novoFilme.getTitulo()}" cadastrado com sucesso!`);
-
-        document.getElementById("form-cadastro-filmes").reset();
-        this.atualizarTabelaFilmes();
+        const imagemInput = document.getElementById("imagem-filme");
+        const reader = new FileReader();
+    
+        reader.onload = () => {
+            const imagemBase64 = reader.result;
+    
+            const novoFilme = new Filme(
+                novoId,
+                titulo,
+                descricao,
+                genero,
+                classificacao,
+                duracao,
+                dataEstreia,
+                imagemBase64
+            );
+    
+            this.listaFilmes.push(novoFilme);
+            localStorage.setItem("filmes", JSON.stringify(this.listaFilmes));
+            alert(`Filme "${novoFilme.getTitulo()}" cadastrado com sucesso!`);
+    
+            document.getElementById("form-cadastro-filmes").reset();
+            this.atualizarTabelaFilmes();
+        };
+    
+        reader.readAsDataURL(imagemInput.files[0]);
     }
 
     atualizarTabelaFilmes(){
@@ -49,9 +67,12 @@ class FilmeController{
                 <td>${filme.getDataEstreia()}</td>
             `;
             const botoes = this.criarBotoes(filme);
-            const tdBotoes = document.createElement("td");
-            botoes.forEach(botao => { tdBotoes.appendChild(botao); });
-            tr.appendChild(tdBotoes);
+            botoes.forEach(botao => { 
+                const tdBotoes = document.createElement("td"); 
+                tdBotoes.appendChild(botao); 
+                tr.appendChild(tdBotoes);
+            });
+
             tbody.appendChild(tr);
         });
 

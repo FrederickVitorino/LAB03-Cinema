@@ -9,128 +9,165 @@
         </head>
         
         <body>
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a class="nav-link" href="../index.html">Página Inicial</a>
-                </li>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="../index.html">Cinema</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Página Inicial</a>
+                            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="venda-ingressos.html">Ingressos</a>
-                </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="venda-ingressos.html">Comprar Ingressos</a>
+                            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="sessoes.html">Sessões Disponíveis</a>
-                </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="sessoes.html">Sessões Disponíveis</a>
+                            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="cadastro-filmes.html">Cadastrar Filmes</a>
-                </li>
-  
-                <li class="nav-item">
-                    <a class="nav-link" href="cadastro-salas.html">Cadastrar Salas</a>
-                </li>
-  
-                <li class="nav-item">
-                    <a class="nav-link" href="cadastro-sessoes.html">Cadastrar Sessões</a>
-                </li>
-            </ul>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="cadastro-filmes.html">Cadastrar Filmes</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="cadastro-salas.html">Cadastrar Salas</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="cadastro-sessoes.html">Cadastrar Sessões</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
 
             <main>
                 <form class="row g-3" id="form-cadastro-filmes">
-                    <div class="row g-3 align-items-center">
-                        <div class="col-auto">
-                            <label for="titulo-filme" class="col-form-label">Título do Filme:</label>
+                    <div class="row mb-2">
+                        <div class="col-12 col-md-6">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="col-auto">
+                                        <label for="titulo-filme" class="col-form-label">Título do Filme:</label>
+                                    </div>
+                
+                                    <div class="col">
+                                        <input type="text" id="titulo-filme" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="col-auto">
+                                        <label for="imagem-filme" class="col-form-label">Imagem do Filme:</label>
+                                    </div>
+                                
+                                    <div class="col">
+                                        <input type="file" id="imagem-filme" class="form-control" accept="image/*" required>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="col-auto">
+                                <label for="descricao-filme" class="col-form-label">Descrição do Filme:</label>
+                            </div>
     
-                        <div class="col">
-                            <input type="text" id="titulo-filme" class="form-control" required>
+                            <div class="col">
+                                <textarea id="descricao-filme" class="form-control" rows="3" style="resize: none;" required></textarea>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="row g-3 align-items-center">
-                        <div class="col-auto">
-                            <label for="descricao-filme" class="col-form-label">Descrição do Filme:</label>
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="col-auto">
+                                <label for="genero-filme" class="col-form-label">Gênero do Filme:</label>
+                            </div>
+    
+                            <div class="col">
+                                <select class="form-select" id="genero-filme" required>
+                                    <option selected>Selecione o gênero</option>
+                                    <option value="Ação">Ação</option>
+                                    <option value="Animação">Animação</option>
+                                    <option value="Aventura">Aventura</option>
+                                    <option value="Comédia">Comédia</option>
+                                    <option value="Drama">Drama</option>
+                                    <option value="Romance">Romance</option>
+                                    <option value="Suspense">Suspense</option>
+                                    <option value="Terror">Terror</option>
+                                </select>
+                            </div>
                         </div>
 
-                        <div class="col">
-                            <textarea id="descricao-filme" class="form-control" rows="3" style="resize: none;" required></textarea>
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="col-auto">
+                                <label for="classificacao-filme" class="col-form-label">Classificação:</label>
+                            </div>
+    
+                            <div class="col">
+                                <select class="form-select" id="classificacao-filme" required>
+                                    <option selected disabled>Selecione a classificação</option>
+                                    <option value="Livre">Livre</option>
+                                    <option value="10">10 anos</option>
+                                    <option value="12">12 anos</option>
+                                    <option value="14">14 anos</option>
+                                    <option value="16">16 anos</option>
+                                    <option value="18">18 anos</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="col-auto">
+                                <label for="duracao-filme" class="col-form-label">Duração do Filme:</label>
+                            </div>
+    
+                            <div class="input-group col">
+                                <input type="number" id="duracao-filme" class="form-control" required>
+                                <span class="input-group-text">minutos</span>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="col-auto">
+                                <label for="data-estreia" class="col-form-label">Data de Estreia:</label>
+                            </div>
+    
+                            <div class="col">
+                                <input type="date" id="data-estreia" class="form-control" required>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="row g-3 align-items-center">
-                        <div class="col-auto">
-                            <label for="genero-filme" class="col-form-label">Gênero do Filme:</label>
-                        </div>
-
-                        <div class="col">
-                            <select class="form-select" id="genero-filme" required>
-                                <option selected>Selecione o gênero</option>
-                                <option value="Ação">Ação</option>
-                                <option value="Animação">Animação</option>
-                                <option value="Aventura">Aventura</option>
-                                <option value="Comédia">Comédia</option>
-                                <option value="Drama">Drama</option>
-                                <option value="Romance">Romance</option>
-                                <option value="Suspense">Suspense</option>
-                                <option value="Terror">Terror</option>
-                            </select>
-                        </div>
-
-                        <div class="col-auto">
-                            <label for="classificacao-filme" class="col-form-label">Classificação:</label>
-                        </div>
-
-                        <div class="col">
-                            <select class="form-select" id="classificacao-filme" required>
-                                <option selected disabled>Selecione a classificação</option>
-                                <option value="Livre">Livre</option>
-                                <option value="10">10 anos</option>
-                                <option value="12">12 anos</option>
-                                <option value="14">14 anos</option>
-                                <option value="16">16 anos</option>
-                                <option value="18">18 anos</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="row g-3 align-items-center">
-                        <div class="col-auto">
-                            <label for="duracao-filme" class="col-form-label">Duração do Filme:</label>
-                        </div>
-
-                        <div class="input-group col">
-                            <input type="number" id="duracao-filme" class="form-control" required>
-                            <span class="input-group-text">minutos</span>
-                        </div>
-                        
-                        <div class="col-auto">
-                            <label for="data-estreia" class="col-form-label">Data de Estreia:</label>
-                        </div>
-
-                        <div class="col">
-                            <input type="date" id="data-estreia" class="form-control" required>
-                        </div>
-                    </div>
-
-                    <div class="col-auto align-items-center">
+                    <div class="col-auto">
                         <button type="submit" class="btn btn-dark">Salvar Filme</button>
                     </div>
                 </form>
 
                 <hr>
-                <table class="table table-bordered border-secondary" id="tabela-filmes">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Título</th>
-                            <th scope="col">Gênero</th>
-                            <th scope="col">Classificação</th>
-                            <th scope="col">Duração</th>
-                            <th scope="col">Data de Estreia</th>
-                            <th scope="col">Editar/Excluir</th>
-                        </tr>
-                      </thead>
-                </table>
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped table-bordered border-secondary" id="tabela-filmes">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Título</th>
+                                <th scope="col">Gênero</th>
+                                <th scope="col">Classificação</th>
+                                <th scope="col">Duração</th>
+                                <th scope="col">Data de Estreia</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                          </thead>
+                    </table>
+                </div>
             </main>
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
